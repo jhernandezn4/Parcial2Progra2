@@ -9,6 +9,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
+import java.util.Enumeration;
 import java.util.List;
 
 public class frmPizza {
@@ -21,6 +22,11 @@ public class frmPizza {
     private JButton btbPrepararPizza;
     private JComboBox comboBoxTipoPizza;
     private JList ListPrepare;
+    private JRadioButton smallRadioButton;
+    private JRadioButton mediumRadioButton;
+    private JRadioButton bigRadioButton;
+
+
 
     private double total = 0;
 
@@ -40,6 +46,24 @@ public class frmPizza {
     public frmPizza() {
         iniciarSistema();
 
+        smallRadioButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                calcularTotal();
+            }
+        });
+        mediumRadioButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                calcularTotal();
+            }
+        });
+        bigRadioButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                calcularTotal();
+            }
+        });
         /**
          * SE AGREGO UNA ACCION AL SELECCIONAR UNA ESPECIALIDAD
          */
@@ -157,6 +181,12 @@ public class frmPizza {
         for (int i= 0; i< lista1.getModel().getSize(); i++){
             Topping t = (Topping) lista1.getModel().getElementAt(i);
             total+=t.getPrecio();
+        }
+
+        if (bigRadioButton.isSelected()){
+            total=total+(total*0.15);
+        } else if (mediumRadioButton.isSelected()) {
+            total=total+(total*0.30);
         }
         lblTotal.setText(String.valueOf(total));
     }

@@ -102,7 +102,7 @@ public class frmPizza {
             }
         });
         /**
-         * SE ELIMINA UN INGREDIENTE
+         * SE ELIMINA UN INGREDIENTE AL HACER DOBLE CLICK
          */
         lista1.addMouseListener(new MouseAdapter() {
             public void mouseClicked(MouseEvent evt) {

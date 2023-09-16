@@ -70,10 +70,13 @@ public class frmPizza {
             public void actionPerformed(ActionEvent e) {
 
                 if (txtPizza.getText().isEmpty()){
-                    JOptionPane.showMessageDialog(null,"Ingrese un ingrediente de la pizza");
+                    JOptionPane.showMessageDialog(null,"Ingrese el nombre de la pizza");
                     return;
                 }
-
+                if (modeloLista.isEmpty()){
+                    JOptionPane.showMessageDialog(null,"Ingrese al menos un ingrediente a la pizza");
+                    return;
+                }
                 Pizza pizza = new Pizza(txtPizza.getText());
                 Topping topi;
                 for (int i= 0; i< lista1.getModel().getSize(); i++){
@@ -112,6 +115,7 @@ public class frmPizza {
                     // Double-click detected
                     int index = list.locationToIndex(evt.getPoint());
                     modeloLista.remove(index);
+                    calcularTotal();
                 }
             }
         });

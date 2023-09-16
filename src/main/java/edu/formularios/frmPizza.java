@@ -74,6 +74,7 @@ public class frmPizza {
             @Override
             public void actionPerformed(ActionEvent e) {
                 cargarEspecialidades(String.valueOf(comboBoxTipoPizza.getSelectedItem()));
+                txtPizza.setText(String.valueOf(comboBoxTipoPizza.getSelectedItem()));
             }
         });
         /**
@@ -95,6 +96,9 @@ public class frmPizza {
         btbPrepararPizza.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
+                //refresh every time
+                modeloPrepare.clear();
 
                 if (txtPizza.getText().isEmpty()){
                     JOptionPane.showMessageDialog(null,"Ingrese el nombre de la pizza");

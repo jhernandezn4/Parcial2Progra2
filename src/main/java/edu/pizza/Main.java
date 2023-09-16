@@ -15,10 +15,10 @@ public class Main {
         JFrame frame = new JFrame("frmPizza");
         frame.setContentPane(new frmPizza().getjPanelPrincipal());
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
-        frame.setTitle("Pizza's Mario");
-        frame.setSize(500,500);
+        frame.setTitle("Pizza's UMG");
         frame.setVisible(true);
+        frame.setSize(500,500);
         frame.setLocationRelativeTo(null);
+        frame.pack();
     }
 }

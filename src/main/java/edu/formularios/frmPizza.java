@@ -6,6 +6,8 @@ import edu.pizza.base.Topping;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -99,7 +101,22 @@ public class frmPizza {
 
             }
         });
+        /**
+         * SE ELIMINA UN INGREDIENTE
+         */
+        lista1.addMouseListener(new MouseAdapter() {
+            public void mouseClicked(MouseEvent evt) {
+                JList list = (JList)evt.getSource();
+                if (evt.getClickCount() == 2) {
+
+                    // Double-click detected
+                    int index = list.locationToIndex(evt.getPoint());
+                    modeloLista.remove(index);
+                }
+            }
+        });
     }
+
 
     /**
      * SE INICIA EL SISTEMA Y SE CARGAN LOS INGREDIENTES Y LAS ESPECIALIDADES

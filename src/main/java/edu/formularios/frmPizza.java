@@ -46,6 +46,9 @@ public class frmPizza {
     public frmPizza() {
         iniciarSistema();
 
+        /**
+         * SE AGREGARO QUE AL CAMBIAR DE TAMAÑO SE VUELVA A CALCULAR EL PRECIO
+         */
         smallRadioButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -174,7 +177,8 @@ public class frmPizza {
     }
 
     /**
-     * FUNCION PARA RECORRER LOS INGREDIENTES Y CALCULAR EL TOTAL
+     * FUNCION PARA RECORRER LOS INGREDIENTES Y CALCULAR EL TOTAL EN BASE A LOS IGNREDIENTES
+     * Y AL TAMAÑO DE LA PIZZA
      */
     private void calcularTotal(){
         double total =0;
